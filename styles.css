@@ -5,11 +5,29 @@
 
 :root {
     --primary-color: #033452;
-    --secondary-color: #E9F2FC;
+    --secondary-color: #F6F7F8;
+
+    --header-height: 3em;
 }
 
 body {
     background-color: var(--secondary-color);
+}
+
+
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+
+    padding: var(--header-height);
+    display: flex;
+    width: 100vw;
+    column-gap: 2em;
+    position: fixed;
+}
+
+main {
+    padding-top: var(--header-height);
 }
 
 .dark {
