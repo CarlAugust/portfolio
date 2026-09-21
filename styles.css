@@ -1,0 +1,30 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
+}
+
+:root {
+    --primary-color: #033452;
+    --secondary-color: #E9F2FC;
+}
+
+body {
+    background-color: var(--secondary-color);
+}
+
+.dark {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.light {
+    background-color: var(--secondary-color);
+    color: var(--primary-color)
+}
+
+.full-box {
+    width: 100vw;
+    text-align: center;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
