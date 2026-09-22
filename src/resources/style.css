@@ -7,7 +7,7 @@
     --primary-color: #033452;
     --secondary-color: #F6F7F8;
 
-    --header-height: 3em;
+    --nav-height: 3em;
 }
 
 body {
@@ -15,11 +15,11 @@ body {
 }
 
 
-header {
+nav {
     background-color: var(--primary-color);
     color: var(--secondary-color);
 
-    padding: var(--header-height);
+    padding: var(--nav-height);
     display: flex;
     width: 100vw;
     column-gap: 2em;
@@ -27,7 +27,7 @@ header {
 }
 
 main {
-    padding-top: var(--header-height);
+    padding-top: var(--nav-height);
 }
 
 .dark {
