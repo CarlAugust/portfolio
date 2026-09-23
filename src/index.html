@@ -14,11 +14,15 @@
         <a>Some place</a>
     </nav>
     <main>
-        <div class="full-box dark">
+        <canvas></canvas>
+        <div class="hero light">
             <h1>Carl August</h1>
             <p>Lorem ipsum somethibg about me and how great i am</p>
+            <div class="icon-list">
+                <a href="https://github.com/CarlAugust"><img alt="Github icon" src="/resources/icons/github.png" width="2em" height="2em"></a>
+            </div>
         </div>
-        <div class="full-box light">
+        <div class="full-box dark">
             <h2>I like cats</h2>
             <p>More text jadjaajdjaja</p>
         </div>
@@ -41,4 +45,28 @@
     </main>
     <footer></footer>
 </body>
+<script>
+
+    const resize = () => {
+        /*
+            Do i even need this lmao?
+        */
+        const hero = document.querySelector(".hero");
+        const hero_width = hero.clientWidth;
+        const hero_height = hero.clientHeight;
+
+        const canvas = document.querySelector("canvas");
+        canvas.width = hero_width;
+        canvas.height = hero_height;
+        canvas.style.zIndex   = 8;
+        canvas.style.position = "absolute";
+
+    }
+
+    window.addEventListener("resize", (resize))
+    resize()
+
+    
+
+</script>
 </html>

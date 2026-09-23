@@ -26,10 +26,6 @@ nav {
     position: fixed;
 }
 
-main {
-    padding-top: var(--nav-height);
-}
-
 .dark {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -38,6 +34,16 @@ main {
 .light {
     background-color: var(--secondary-color);
     color: var(--primary-color)
+}
+
+.hero {
+    width: 100vw;
+    text-align: center;
+    padding-top: 44vh;
+    padding-bottom: 44vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 .full-box {
