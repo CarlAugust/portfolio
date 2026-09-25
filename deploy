@@ -1,0 +1,1 @@
+scp -r src/* inf105:/var/www/inf105

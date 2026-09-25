@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 * {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Ubuntu Mono", monospace;
     margin: 0px;
 }
+
 
 :root {
     --primary-color: #033452;
     --secondary-color: #F6F7F8;
 
     --nav-height: 3em;
+    --large-fontsize: 36px;
+    --medium-fontsize: 20px;
 }
 
 body {
@@ -18,13 +23,13 @@ body {
 nav {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-
     padding: var(--nav-height);
     display: flex;
     width: 100vw;
     column-gap: 2em;
     position: fixed;
 }
+
 
 .dark {
     background-color: var(--primary-color);
@@ -37,6 +42,7 @@ nav {
 }
 
 .hero {
+    font-size: var(--large-fontsize);
     width: 100vw;
     text-align: center;
     padding-top: 44vh;
@@ -47,8 +53,21 @@ nav {
 }
 
 .full-box {
-    width: 100vw;
+    width: min(100vw, max(12rem, 50vw));
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     padding-top: 5em;
     padding-bottom: 5em;
+}
+
+.content {
+    width: min(100vw, max(12rem, 50vw));
+    margin-left: auto;
+    margin-right: auto;
+    font-size: var(--medium-fontsize);
+}
+
+.content br {
+    margin: 1em;
 }
