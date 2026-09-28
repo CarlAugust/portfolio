@@ -9,20 +9,32 @@
 :root {
     --primary-color: #033452;
     --secondary-color: #F6F7F8;
+    --default-font: #000000;
+    --light-font: #FFFFFF;
+
+    --background-color: var(--secondary-color);
+    --secondary-background-color: var(--primary-color);
 
     --nav-height: 3em;
     --large-fontsize: 36px;
     --medium-fontsize: 20px;
 }
 
+body[data-theme="dark"] { 
+    --background-color: var(--secondary-background-color);
+    transition: background 0.5s ease-in-out;
+    --default-font: #FFFFFF;
+}
+
 body {
-    background-color: var(--secondary-color);
+    background-color: var(--background-color);
+    color: var(--default-font);
 }
 
 
 nav {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--secondary-background-color);
+    color: var(--light-font);
     padding: var(--nav-height);
     display: flex;
     width: 100vw;
@@ -30,15 +42,40 @@ nav {
     position: fixed;
 }
 
-
-.dark {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+footer {
+    background-color: var(--secondary-background-color);
+    color: var(--light-font);
+    padding: 24px;
 }
 
-.light {
-    background-color: var(--secondary-color);
-    color: var(--primary-color)
+footer a {
+    color: var(--light-font);
+}
+
+button {
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    outline: 2px solid;
+    outline-color: var(--primary-color);
+    background-color: var(--light-font);
+    border-radius: 20px;
+    padding: 6px;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    color: var(--light-font);
+    outline-color: var(--light-font);
+    transition: 0.3s ease-in-out;
+}
+
+dialog {
+    margin-left: auto;
+    margin-right: auto;
+    top: 2  0vw;
+    position: fixed;
 }
 
 .hero {
@@ -70,4 +107,10 @@ nav {
 
 .content br {
     margin: 1em;
+}
+
+.icon img {
+    width: var(--large-fontsize);
+    border-radius: 6px;
+    background-color: var(--light-font);
 }

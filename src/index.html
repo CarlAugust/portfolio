@@ -12,13 +12,22 @@
         <a>Some place</a>
         <a>Some place</a>
         <a>Some place</a>
+        <button onclick="DarkMode()">Change theme</button>
+        <button onclick="ShowContract()">Click me please</button>
     </nav>
+    <dialog>
+        <p>Sell your soul to me: </p><br>
+        <div>
+            <button onclick="YesOrNo(true)">Yes</button>
+            <button onclick="YesOrNo(false)">No</button>
+        </div>
+    </dialog>
     <main>
         <div class="hero light">
             <h1>Carl August</h1>
             <p>Lorem ipsum somethibg about me and how great i am</p>
             <div class="icon-list">
-                <a href="https://github.com/CarlAugust"><img alt="Github icon" src="/resources/icons/github.png" width="2em" height="2em"></a>
+                <a href="https://github.com/CarlAugust" class="icon"><img alt="Github icon" src="/resources/icons/github.png"></a>
             </div>
         </div>
         <div class="content">
@@ -51,6 +60,39 @@
             <p>More text jadjaajdjaja</p>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <h3>Attributions</h3>
+        <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icon created by riajulislam - Flaticon</a>
+
+
+    </footer>
 </body>
+<script>
+
+    function DarkMode() {
+        const body = document.querySelector("body");
+        const currentTheme = body.getAttribute("data-theme");
+        body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+    }
+
+
+    let accepted = false;
+    const dialog = document.querySelector("dialog")
+    dialog.addEventListener("close", () => {
+        console.log(accepted)
+        if (!accepted) {
+            dialog.show();
+        }
+    });
+
+    function ShowContract() {
+        dialog.show();
+    }
+
+    function YesOrNo(isYes) {
+        accepted = isYes;
+        dialog.close()
+    }
+
+</script>
 </html>
