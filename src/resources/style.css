@@ -29,6 +29,7 @@ body[data-theme="dark"] {
 body {
     background-color: var(--background-color);
     color: var(--default-font);
+    transition: background 0.5s ease-in-out;
 }
 
 
@@ -111,6 +112,9 @@ dialog {
 
 .icon img {
     width: var(--large-fontsize);
-    border-radius: 6px;
-    background-color: var(--light-font);
+
+}
+
+body[data-theme="dark"] .icon img {
+    filter: invert();
 }
