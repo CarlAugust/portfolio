@@ -15,7 +15,7 @@
     --background-color: var(--secondary-color);
     --secondary-background-color: var(--primary-color);
 
-    --nav-height: 3em;
+    --nav-height: 5vh;
     --large-fontsize: 36px;
     --medium-fontsize: 20px;
 }
@@ -35,16 +35,17 @@ body {
 
 nav {
     background-color: var(--secondary-background-color);
+    font-size: var(--medium-fontsize);
     color: var(--light-font);
     padding: var(--nav-height);
     display: flex;
-    width: 100vw;
+    box-sizing: border-box;
     column-gap: 2em;
-    position: fixed;
 }
 
 footer {
     background-color: var(--secondary-background-color);
+    box-sizing: border-box;
     color: var(--light-font);
     padding: 24px;
 }
@@ -62,8 +63,9 @@ button {
     outline-color: var(--primary-color);
     background-color: var(--light-font);
     border-radius: 20px;
-    padding: 6px;
     width: fit-content;
+    padding: 4px 8px 4px 8px;
+    font-size: var(--medium-fontsize);
 }
 
 button:hover {
@@ -82,29 +84,24 @@ dialog {
 
 .hero {
     font-size: var(--large-fontsize);
-    width: 100vw;
+    width: min(90vw, max(800px, 50vw));
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 96px;
+    margin-bottom: 96px;
     text-align: center;
     align-items: center;
-    padding-top: 44vh;
-    padding-bottom: 44vh;
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
 
-.full-box {
-    width: min(100vw, max(12rem, 50vw));
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding-top: 5em;
-    padding-bottom: 5em;
-}
-
 .content {
-    width: min(100vw, max(12rem, 50vw));
+    width: min(90vw, max(800px, 50vw));
     margin-left: auto;
     margin-right: auto;
+    margin-top: 48px;
+    margin-bottom: 48px;
     font-size: var(--medium-fontsize);
 }
 
@@ -119,4 +116,15 @@ dialog {
 
 body[data-theme="dark"] .icon img {
     filter: invert();
+}
+
+
+
+
+h2 {
+    margin-bottom: 12px;
+}
+
+p {
+  line-height: 1.5;
 }
