@@ -4,33 +4,6 @@ function DarkMode() {
     body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
 }
 
-
-// Load navbar content
-try {
-    fetch("/resources/components/nav.html")
-        .then((response) => response.text())
-        .then((text) => {
-            const nav = document.querySelector("nav")
-            nav.innerHTML = text;
-        })
-} catch (e) {
-    console.error(e);
-}
-
-// Load footer content
-try {
-    fetch("/resources/components/footer.html")
-        .then((response) => response.text())
-        .then((text) => {
-            const footer = document.querySelector("footer")
-            footer.innerHTML = text;
-        })
-} catch (e) {
-    console.error(e);
-}
-
-
-
 let accepted = false;
 const dialogHTML = `
 <dialog>

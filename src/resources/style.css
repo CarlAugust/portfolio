@@ -63,6 +63,7 @@ button {
     background-color: var(--light-font);
     border-radius: 20px;
     padding: 6px;
+    width: fit-content;
 }
 
 button:hover {
@@ -83,6 +84,7 @@ dialog {
     font-size: var(--large-fontsize);
     width: 100vw;
     text-align: center;
+    align-items: center;
     padding-top: 44vh;
     padding-bottom: 44vh;
     display: flex;
