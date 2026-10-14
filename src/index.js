@@ -11,7 +11,6 @@ const contractDialogHTML = `
     <section style="margin: 16px">
         <h2>Please sell your soul to me: </h2>
         <p>You will sell your soul to me. </p>
-        <p>If you dont want to... to bad.</p>
         <p>You will get nothing for it.</p>
         <br>
         <div>
