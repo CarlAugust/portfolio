@@ -4,33 +4,42 @@ function DarkMode() {
     body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
 }
 
-let accepted = false;
-const dialogHTML = `
-<dialog>
-    <p>Sell your soul to me: </p><br>
-    <div>
-        <button onclick="YesOrNo(true)">Yes</button>
-        <button onclick="YesOrNo(false)">No</button>
-    </div>
+
+
+
+let contractAccepted = false;
+
+const contractDialogHTML = `
+<dialog id="contract">
+    <section style="margin: 16px">
+        <h2>Please sell your soul to me: </h2>
+        <p>You will sell your soul to me. </p>
+        <p>If you dont want to... to bad.</p>
+        <p>You will get nothing for it.</p>
+        <br>
+        <div>
+            <button onclick="AnswerContract(true)">Yes</button>
+            <button onclick="AnswerContract(false)">No</button>
+        </div>
+    </section>
 </dialog>
 `
-const dialogBox = document.createElement("div")
-dialogBox.innerHTML = dialogHTML;
-document.querySelector("body").appendChild(dialogBox);
+const contractDialogBox = document.createElement("div")
+contractDialogBox.innerHTML = contractDialogHTML;
+document.querySelector("body").appendChild(contractDialogBox);
 
-const dialog = document.querySelector("dialog")
-dialog.addEventListener("close", () => {
-    console.log(accepted)
-    if (!accepted) {
-        dialog.show();
+const contractDialog = document.getElementById("contract")
+contractDialog.addEventListener("close", () => {
+    if (!contractAccepted) {
+        contractDialog.show();
     }
 });
 
 function ShowContract() {
-    dialog.show();
+    contractDialog.show();
 }
 
-function YesOrNo(isYes) {
-    accepted = isYes;
-    dialog.close()
+function AnswerContract(isYes) {
+    contractAccepted = isYes;
+    contractDialog.close()
 }
