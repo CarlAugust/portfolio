@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
     font-family: "Ubuntu Mono", monospace;
@@ -7,47 +7,62 @@
 
 
 :root {
-    --primary-color: #033452;
-    --secondary-color: #F6F7F8;
-    --default-font: #000000;
-    --light-font: #FFFFFF;
+
+    --blue-color: #6378AB;
+    --light-color: #F6F7F8;
+    --black-color: #0f1116;
+    --focus-color: #44b5fc;
+    
+
+    --primary-color: var(--blue-color);
+    --secondary-color: var(--light-color);
+    --default-font: var(--black-color);
+    --light-font: var(--light-color);
 
     --background-color: var(--secondary-color);
-    --secondary-background-color: var(--primary-color);
 
     --nav-height: 5vh;
     --large-fontsize: 36px;
     --medium-fontsize: 20px;
 }
 
-body[data-theme="dark"] { 
-    --background-color: var(--secondary-background-color);
+body[data-theme="dark"] {  
+    --default-font: var(--light-color);
+    --primary-color: var(--black-color);
+    --secondary-color: var(--black-color);
+
     transition: background 0.5s ease-in-out;
-    --default-font: #FFFFFF;
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: var(--secondary-color);
     color: var(--default-font);
     transition: background 0.5s ease-in-out;
 }
 
 
 nav {
-    background-color: var(--secondary-background-color);
+    background-color: var(--primary-color);
+    transition: background 0.5s ease-in-out;
     font-size: var(--medium-fontsize);
     color: var(--light-font);
     padding: var(--nav-height);
     display: flex;
+    justify-content: center;
     box-sizing: border-box;
     column-gap: 2em;
 }
 
+main {
+    margin-bottom: 48px;
+}
+
 footer {
-    background-color: var(--secondary-background-color);
+    background-color: var(--primary-color);
+    transition: background 0.5s ease-in-out;
     box-sizing: border-box;
     color: var(--light-font);
-    padding: 24px;
+    padding: 48px;
 }
 
 footer a {
@@ -75,6 +90,12 @@ button:hover {
     transition: 0.3s ease-in-out;
 }
 
+button:focus {
+    outline-color: var(--focus-color);
+    outline-offset: 4px;
+    outline-width: 4px;
+}
+
 dialog {
     margin-left: auto;
     margin-right: auto;
@@ -89,6 +110,10 @@ dialog {
     margin-right: auto;
     margin-top: 96px;
     margin-bottom: 96px;
+    display: flex;
+}
+
+.hero-text {
     text-align: center;
     align-items: center;
     display: flex;
@@ -120,11 +145,14 @@ body[data-theme="dark"] .icon img {
 
 
 
+h1 {
+    font-family: "Ubuntu Condensed", sans-serif;
+}
 
 h2 {
     margin-bottom: 12px;
 }
 
 p {
-  line-height: 1.5;
+    line-height: 1.5;
 }
