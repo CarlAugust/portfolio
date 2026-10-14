@@ -8,13 +8,13 @@
 
 :root {
 
-    --blue-color: #993C44;
+    --red-color: #993C44;
     --light-color: #F6F7F8;
     --black-color: #0f1116;
     --focus-color: #44b5fc;
     
 
-    --primary-color: var(--blue-color);
+    --primary-color: var(--red-color);
     --secondary-color: var(--light-color);
     --default-font: var(--black-color);
     --light-font: var(--light-color);
@@ -129,7 +129,7 @@ button:focus {
     gap: 1em;
 }
 
-.content {
+.text {
     width: min(90vw, max(800px, 50vw));
     margin-left: auto;
     margin-right: auto;
@@ -137,10 +137,16 @@ button:focus {
     margin-bottom: 48px;
     font-size: var(--medium-fontsize);
     display: grid;
+
+    a {
+        color: var(--default-font);
+        text-decoration-color: var(--red-color);
+        text-decoration-thickness: 2px;
+    }
 }
 
-.content br {
-    margin: 1em;
+.text br {
+    margin: 16px;
 }
 
 .icon img {
