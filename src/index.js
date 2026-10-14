@@ -4,9 +4,6 @@ function DarkMode() {
     body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
 }
 
-
-
-
 let contractAccepted = false;
 
 const contractDialogHTML = `

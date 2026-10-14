@@ -48,9 +48,16 @@ nav {
     color: var(--light-font);
     padding: var(--nav-height);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     box-sizing: border-box;
-    column-gap: 2em;
+    column-gap: 48px;
+    row-gap: 24px;
+
+
+    a {
+        color: var(--light-color);
+    }
 }
 
 main {
@@ -96,11 +103,11 @@ button:focus {
     outline-width: 4px;
 }
 
-dialog {
+#contract {
     margin-left: auto;
     margin-right: auto;
-    top: 20vw;
     position: fixed;
+    top: 40vh;
 }
 
 .hero {
@@ -111,6 +118,7 @@ dialog {
     margin-top: 96px;
     margin-bottom: 96px;
     display: flex;
+    justify-content: center;
 }
 
 .hero-text {
@@ -128,6 +136,7 @@ dialog {
     margin-top: 48px;
     margin-bottom: 48px;
     font-size: var(--medium-fontsize);
+    display: grid;
 }
 
 .content br {
