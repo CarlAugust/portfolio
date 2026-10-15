@@ -1,7 +1,10 @@
 function DarkMode() {
-    const body = document.querySelector("body");
-    const currentTheme = body.getAttribute("data-theme");
-    body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+    const currentTheme = localStorage.getItem("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    localStorage.setItem("data-theme", newTheme);
+
+    const root = document.querySelector(":root");
+    root.setAttribute("data-theme", newTheme);
 }
 
 let contractAccepted = false;
@@ -32,7 +35,9 @@ contractDialog.addEventListener("close", () => {
 });
 
 function ShowContract() {
-    contractDialog.show();
+    if (!contractAccepted) {
+        contractDialog.show();
+    }
 }
 
 function AnswerContract(isYes) {

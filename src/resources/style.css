@@ -26,12 +26,11 @@
     --medium-fontsize: 20px;
 }
 
-body[data-theme="dark"] {  
+
+:root[data-theme="dark"] {  
     --default-font: var(--light-color);
     --primary-color: var(--black-color);
     --secondary-color: var(--black-color);
-
-    transition: background 0.5s ease-in-out;
 }
 
 body {
