@@ -132,6 +132,34 @@ button:focus {
     gap: 1em;
 }
 
+.not-found {
+    font-size: var(--large-fontsize);
+    width: min(90vw, max(1200px, 80vw));
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;   
+}
+
+.not-found img {
+    width: max(40vw, 280px);
+    align-self: center;
+}
+
+.not-found-information {
+    width: min(90vw, max(40vw, 320px));
+
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    margin-bottom: 24px;
+}
+
+
 .content-section {
     width: min(90vw, max(800px, 50vw));
     margin-left: auto;
