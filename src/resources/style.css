@@ -31,6 +31,10 @@
     --default-font: var(--light-color);
     --primary-color: var(--black-color);
     --secondary-color: var(--black-color);
+
+    .social-link img {
+        filter: invert();
+    }
 }
 
 body {
@@ -114,7 +118,7 @@ button:focus {
     width: min(90vw, max(800px, 50vw));
     margin-left: auto;
     margin-right: auto;
-    margin-top: 96px;
+    margin-top: 10vh;
     margin-bottom: 96px;
     display: flex;
     justify-content: center;
@@ -128,13 +132,7 @@ button:focus {
     gap: 1em;
 }
 
-.text-link {
-    color: var(--default-font);
-    text-decoration-color: var(--red-color);
-    text-decoration-thickness: 2px;
-}
-
-.text {
+.content-section {
     width: min(90vw, max(800px, 50vw));
     margin-left: auto;
     margin-right: auto;
@@ -154,12 +152,6 @@ button:focus {
 
 }
 
-body[data-theme="dark"] .social-link img {
-    filter: invert();
-}
-
-
-
 h1 {
     font-family: "Ubuntu Condensed", sans-serif;
 }
@@ -170,4 +162,9 @@ h2 {
 
 p {
     line-height: 1.5;
+    a { 
+        color: var(--default-font);
+        text-decoration-color: var(--focus-color);
+        text-decoration-thickness: 2px;
+    }
 }

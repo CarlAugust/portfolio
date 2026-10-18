@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page not found</title>
     <link rel="stylesheet" href="/resources/style.css">
+    <script src="/preload.js"></script>
 </head>
 <body>
     <nav>
@@ -14,12 +15,58 @@
         <button onclick="ShowContract()">Click me please</button>
     </nav>
     <main>
-        <section class="hero">
+        <section class="hero" style="margin-bottom: 1080px;">
             <div class="hero-text">
-                <h1>404 Page not found!!</h1>
-                <p>I dont know how you ended up here, but this is a dead end! Nothing to find here!</p>
-                <a href="/" class="text-link">Go back</a>
+                <h1>404!! The page was not found!!</h1>
+                <p>I dont know how you ended up here, but this page doesnt exist. <a href="/">Click here to leave.</a></p>
             </div>
+        </section>
+
+        <section class="content-section" style="margin-bottom: 1080px;">
+            <h2>Why are you scrolling</h2>
+            <p>There is a link, to leave the page... Please leave, I dont want anybody here. This page doesnt exist you know.</p>
+        </section>
+
+        <section class="content-section" style="margin-bottom: 1080px;">
+            <h2>There isnt more to see</h2>
+            <p>
+                I know you see a long scrollbar, but you really dont have to scroll. 
+                I mean this page entire purpose is to tell you to leave. And then i mean
+                I want you to leave the page. Dont think your something special.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Leave</h2>
+        </section>
+
+        <section class="content-section">
+            <h2>I said leave</h2>
+            <p>Please leave...</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Leave</h2>
+            <p>Please leave...</p>
+        </section>
+
+        <section class="content-section" style="margin-bottom: 10000px;">
+            <h2>Do you really not know how to?</h2>
+            <p>There is a link at the start of the page, you can leave. Just click that link.</p>
+            <p>...</p>
+            <p>Fine I will help you.</p>
+            <button onclick="ReturnToTheTop404Page()" style="margin-top: 12px;">Return to the top</button>
+        </section>
+
+        <section class="content-section" id="final-message">
+            <h2>Oh hello</h2>
+            <p>
+                Welcome to the bottom. This is truly the end of this page. You found me, in the page that was not found.
+                How do you feel? Great? Did the guy upstairs tell you not to scroll? If he did im glad you didnt click the button.
+                Now then, just for you my friend i have a bery special button. A button that surpasses all other buttons. A button,
+                that makes this page green, for an amazing reason. That i wont tell you, but you will get a green page, isnt that awesome. 
+            </p>
+            <button onclick="MakeBackgroundGreen()" style="margin-top: 12px;">Make it all green</button>
         </section>
     </main>
 <script src="/index.js"></script>
