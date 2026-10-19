@@ -7,28 +7,39 @@ function DarkMode() {
     root.setAttribute("data-theme", newTheme);
 }
 
+/*
+    ----------------------------------  
+*/
+
+
+
+
+
+/*
+    Contract Behaviour
+    -------------------------------------
+*/
 let contractAccepted = false;
 
+// In general Dialog elements should probobly exist hidden in the html and not be created by javascript.
+// But uh to fulfill the requirements of my assignment im doing this.
 function CreateContractElement() {
     const contractDialogHTML = `
-    <dialog id="contract">
-        <section style="margin: 16px">
-            <h2>Please sell your soul to me: </h2>
-            <p>You will sell your soul to me. </p>
-            <p>You will get nothing for it.</p>
-            <br>
-            <div>
-                <button onclick="AnswerContract(true)">Yes</button>
-                <button onclick="AnswerContract(false)">No</button>
-            </div>
-        </section>
-    </dialog>
+    <section style="margin: 16px">
+        <h2>Please sell your soul to me: </h2>
+        <p>You will sell your soul to me. </p>
+        <p>You will get nothing for it.</p>
+        <br>
+        <div>
+            <button onclick="AnswerContract(true)">Yes</button>
+            <button onclick="AnswerContract(false)">No</button>
+        </div>
+    </section>
     `
-    const contractDialogBox = document.createElement("div")
-    contractDialogBox.innerHTML = contractDialogHTML;
-    document.querySelector("body").appendChild(contractDialogBox);
-
-    const contractDialog = document.getElementById("contract")
+    const contractDialog = document.createElement("dialog")
+    contractDialog.innerHTML = contractDialogHTML;
+    contractDialog.id = "contract";
+    document.querySelector("body").appendChild(contractDialog);
 
     // Reopen if Dialog is closed without contract being.
     contractDialog.addEventListener("close", () => {
@@ -66,6 +77,18 @@ function AnswerContract(saidYesToContract) {
     }
 }
 
+/*
+    -------------------------------------
+*/
+
+
+
+
+
+/*
+    404 page functionality
+    -------------------------------------
+*/
 function ReturnToTheTop404Page() {
     // https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
     document.body.scrollTop = 0;
@@ -115,3 +138,7 @@ function MakeBackgroundGreen404Page() {
         section.remove();
     }
 }
+
+/*
+    -------------------------------------
+*/
