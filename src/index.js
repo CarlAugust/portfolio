@@ -9,40 +9,61 @@ function DarkMode() {
 
 let contractAccepted = false;
 
-const contractDialogHTML = `
-<dialog id="contract">
-    <section style="margin: 16px">
-        <h2>Please sell your soul to me: </h2>
-        <p>You will sell your soul to me. </p>
-        <p>You will get nothing for it.</p>
-        <br>
-        <div>
-            <button onclick="AnswerContract(true)">Yes</button>
-            <button onclick="AnswerContract(false)">No</button>
-        </div>
-    </section>
-</dialog>
-`
-const contractDialogBox = document.createElement("div")
-contractDialogBox.innerHTML = contractDialogHTML;
-document.querySelector("body").appendChild(contractDialogBox);
+function CreateContractElement() {
+    const contractDialogHTML = `
+    <dialog id="contract">
+        <section style="margin: 16px">
+            <h2>Please sell your soul to me: </h2>
+            <p>You will sell your soul to me. </p>
+            <p>You will get nothing for it.</p>
+            <br>
+            <div>
+                <button onclick="AnswerContract(true)">Yes</button>
+                <button onclick="AnswerContract(false)">No</button>
+            </div>
+        </section>
+    </dialog>
+    `
+    const contractDialogBox = document.createElement("div")
+    contractDialogBox.innerHTML = contractDialogHTML;
+    document.querySelector("body").appendChild(contractDialogBox);
 
-const contractDialog = document.getElementById("contract")
-contractDialog.addEventListener("close", () => {
-    if (!contractAccepted) {
-        contractDialog.show();
-    }
-});
+    const contractDialog = document.getElementById("contract")
 
-function ShowContract() {
-    if (!contractAccepted) {
-        contractDialog.show();
-    }
+    // Reopen if Dialog is closed without contract being.
+    contractDialog.addEventListener("close", () => {
+        if (!contractAccepted) {
+            contractDialog.show();
+        }
+    });
 }
 
-function AnswerContract(isYes) {
-    contractAccepted = isYes;
-    contractDialog.close()
+function ShowContract() {
+    let contractDialog = document.getElementById("contract");
+
+    if (!contractAccepted && contractDialog == null) {
+        CreateContractElement();
+        contractDialog = document.getElementById("contract");
+        contractDialog.show();
+    }
+
+}
+
+function AnswerContract(saidYesToContract) {
+    const contractDialog = document.getElementById("contract");
+
+    contractAccepted = saidYesToContract;
+    if (contractAccepted) {
+        contractDialog.close()
+        document.getElementById("contract-button").disabled = true;
+        contractDialog.remove();
+    } else {
+
+        // With this and the event listener in the CreateContract function
+        // It is intented behaviour that the dialog will close and reopen when
+        // someone clicks no. I just found that really funny.
+        contractDialog.close();
+    }
 }
 
 function ReturnToTheTop404Page() {
@@ -81,7 +102,7 @@ function RefreshAfterReturning404Page() {
 }
 RefreshAfterReturning404Page();
 
-function MakeBackgroundGreen() {
+function MakeBackgroundGreen404Page() {
     const body = document.querySelector("body");
     body.style.backgroundColor = "#00FF00";
     
